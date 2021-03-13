@@ -1,16 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Search from "./Search";
 import Header from "./Header";
-import photo from "../images/photo.jpeg";
+import GetDataFromApi from "../services/GetDataFromApi";
 import "../stylesheets/App.scss";
+import RepoList from "./RepoList";
 
-function App() {
+const App = () => {
+  const [repositories, setRepositories] = useState([]);
+  useEffect(() => {
+    GetDataFromApi().then((data) => setRepositories(data));
+  }, []);
   return (
-    <div>
-      <Header />
-      Hola mundo
-      <img src={photo} />
-    </div>
+    <>
+      <div>
+        <Header />
+      </div>
+      <div>
+        <Search />
+      </div>
+      <article>
+        <RepoList repositories={repositories} />
+      </article>
+    </>
   );
-}
+};
 
 export default App;
