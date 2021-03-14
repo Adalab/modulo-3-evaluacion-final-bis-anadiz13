@@ -8,7 +8,9 @@ const GetDataFromApi = () => {
           id: repository.id,
           name: repository.name,
           description: repository.description,
-          language: repository.languages_url,
+          language: repository.language,
+          watchers: repository.watchers,
+          forks: repository.forks,
         };
       });
     });
