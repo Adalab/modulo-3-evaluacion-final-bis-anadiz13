@@ -24,7 +24,7 @@ const Repo = (props) => {
           Observadores{props.repository.watchers}
         </p>
         {/* <p className="card__description">
-          Número de estrelllas{props.repository.watchers}
+          Número de estrellas{props.repository.watchers}
         </p> */}
       </article>
     </section>

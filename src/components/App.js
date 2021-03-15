@@ -10,7 +10,7 @@ import { Route, Switch } from "react-router-dom";
 const App = () => {
   const [repositories, setRepositories] = useState([]);
   const [name, setName] = useState("");
-  const [language, setLanguage] = useState("");
+  const [language, setLanguage] = useState("all");
   useEffect(() => {
     GetDataFromApi().then((data) => setRepositories(data));
   }, []);
@@ -26,9 +26,7 @@ const App = () => {
       return repository.name.toUpperCase().includes(name.toUpperCase());
     })
     .filter((repository) => {
-      return repository.language
-        .toUpperCase()
-        .includes(repository.toUpperCase());
+      return language === "all" ? true : repository.language === language;
     });
   const renderRepositoryDetail = (routerProps) => {
     const id = routerProps.match.params.repositoryId;

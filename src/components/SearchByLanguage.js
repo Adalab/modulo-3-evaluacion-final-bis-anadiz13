@@ -9,12 +9,30 @@ const SearchByLanguage = (props) => {
   };
   return (
     <>
-      <label className="label__languages" htmlFor="language"></label>
-      <select name="language" id="language" onChange={handleChange}>
-        <option value="html">HTML</option>
-        <option value="css">CSS</option>
-        <option value="Javascript">JAVASCRIPT </option>
-      </select>
+      <section className="form__language">
+        <label className="form__language--label" htmlFor="language">
+          Filtra por lenguaje{" "}
+        </label>
+        <select
+          className="form__language--select"
+          name="language"
+          id="language"
+          onChange={handleChange}
+        >
+          <option className="form__language--option" value="ALL">
+            TODOS
+          </option>
+          <option className="form__language--option" value="HTML">
+            HTML
+          </option>
+          <option className="form__language--option" value="CSS">
+            CSS
+          </option>
+          <option className="option__languages" value="JAVASCRIPT">
+            JAVASCRIPT{" "}
+          </option>
+        </select>
+      </section>
     </>
   );
 };
