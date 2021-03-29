@@ -8,18 +8,38 @@
   padding: 5px 0px 20px 0px;
 }
 
-// .card__list {
-//   width: 100%;
-//       display: grid;
-//       grid-template-columns: 1fr 1fr;
-//       grid-template-rows: 1fr 1fr;
-// }
+.list__card {
+  list-style: none;
+}
 
 .list__list {
   padding: 30px 0px 30px 50px;
-  margin-right: 30px;
-
-  list-style: disc;
+  align-items: flex-start;
+  list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  position: relative;
+}
+.list__card--listLang {
+  list-style: none; /* Remove default bullets */
+  width: 10px;
+  height: 10px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: purple;
+}
+
+.list__card--listLangElements {
+  //padding-right: 10px;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.name {
+  margin-bottom: 25px;
 }
